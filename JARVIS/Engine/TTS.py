@@ -1,7 +1,10 @@
 try:
     import pyttsx3
-except ModuleNotFoundError:
     import subprocess
+except ModuleNotFoundError:
+    subprocess.run("pip install pyttsx3")
+    import pyttsx3
+except FileNotFoundError:
     subprocess.run("pip install pyttsx3")
     import pyttsx3
 

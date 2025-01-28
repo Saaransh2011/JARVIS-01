@@ -2,16 +2,20 @@ from Engine.STT import STT
 from Engine.TTS import TTS
 from Brain.Brain import get_answer
 import webbrowser
+
 try:
     import pywhatkit as kt
-except ModuleNotFoundError:
     import subprocess
+except ModuleNotFoundError:
     subprocess.run("pip install pywhatkit")   
+    import pywhatkit as kt
+except FileNotFoundError:
+    subprocess.run("pip install pywhatkit") 
     import pywhatkit as kt
 
 print("Please enter 1 or 2 for the Input of JARVIS AI Model")
 print("1: Manually Use the JARVIS AI Model")
-print("2: Automatic Speech Recognition useing the JARVIS AI Model")
+print("2: Automatic Speech Recognition using the JARVIS AI Model")
 x = int(input())
 
 if x == 1:
@@ -55,7 +59,7 @@ if x == 1:
 
 if x == 2:
     while True:
-        text = str(STT())
+        text = STT()
         if text == None:
             continue
         text = text.lower()
