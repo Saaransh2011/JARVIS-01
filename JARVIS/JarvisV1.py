@@ -10,6 +10,8 @@ except ModuleNotFoundError:
     import pywhatkit as kt
 
 print("Please enter 1 or 2 for the Input of JARVIS AI Model")
+print("1: Manually Use the JARVIS AI Model")
+print("2: Automatic Speech Recognition useing the JARVIS AI Model")
 x = int(input())
 
 if x == 1:
@@ -30,6 +32,9 @@ if x == 1:
         if "search in google" in text:
             text = text.replace("search in google", "")
             text = text.replace("jarvis", "")
+            # To replace key strokes
+            text = text.replace("who is", "")
+            text = text.replace("what is", "")
             TTS("Searching about your request sir")
             webbrowser.open(f"https://www.google.com/search?q={text}")
             TTS(f"Search Results {text}")
@@ -65,6 +70,9 @@ if x == 2:
         if "search in google" in text:
             text = text.replace("search in google", "")
             text = text.replace("jarvis", "")
+            # To replace key strokes
+            text = text.replace("who is", "")
+            text = text.replace("what is", "")
             TTS("Searching about your request sir")
             webbrowser.open(f"https://www.google.com/search?q={text}")
             TTS(f"Search Results {text}")
