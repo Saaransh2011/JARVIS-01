@@ -49,12 +49,15 @@ if x == 1:
             TTS(f"Playing your music {text}")
             kt.playonyt(text)
 
+        
+        if "jarvis stop" in text:
+            quit()
+
         if "jarvis" in text:
             text = text.replace("jarvis", "")
             text = text.replace("who is", "")
             text = text.replace("what is", "")
             TTS(get_answer(text))
-
 
 
 if x == 2:
@@ -87,6 +90,9 @@ if x == 2:
             text = text.replace("play", "")
             TTS(f"Playing your music {text}")
             kt.playonyt(text)
+     
+        if "jarvis stop" in text:
+            quit()
         
         if "jarvis" in text:
             text = text.replace("jarvis", "")
