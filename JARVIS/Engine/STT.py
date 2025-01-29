@@ -22,6 +22,8 @@ def STT():
 
     with sr.Microphone() as source:
         print("Speak Now...", flush=True)
+        if sr.Microphone() != None:
+            print("Microphone is  connected")
         try:
             ad = r.listen(source)
             print("processing...", flush=True)
